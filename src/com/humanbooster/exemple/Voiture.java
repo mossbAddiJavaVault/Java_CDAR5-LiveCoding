@@ -1,6 +1,6 @@
 package com.humanbooster.exemple;
 
-public class Voiture extends Vehicule {
+public class Voiture extends Vehicule implements Motorise, QuatreRoues {
     private int nombrePortes;
     private boolean estDemarree;
     private int vitesseActuelle;

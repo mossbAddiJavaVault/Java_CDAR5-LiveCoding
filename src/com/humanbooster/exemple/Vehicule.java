@@ -1,6 +1,6 @@
 package com.humanbooster.exemple;
 
-public abstract class Vehicule {
+public abstract class Vehicule  {
     protected String marque;
     protected String modele;
     protected int vitesseMax;

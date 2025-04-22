@@ -1,4 +1,8 @@
-import com.humanbooster.exemple.Voiture;
+
+import com.humanbooster.exemple.Cercle;
+import com.humanbooster.exemple.Rectangle;
+import com.humanbooster.exemple.Triangle;
+
 
 public class App {
 
@@ -9,22 +13,16 @@ public class App {
     } 
     
     public static void main(String[] args) {
-        Voiture voiture = new Voiture("Tesla", "X", 20, 4);
+        Rectangle rectangle = new Rectangle(3.0, 8.0);
+        rectangle.dessiner();
+        System.out.println(rectangle.obtenirDescription());
 
-        // System.out.println(voiture.getEstDemarree());
-        voiture.demarrer();
-        // System.out.println(voiture.getEstDemarree());
-        // voiture.demarrer();
-        // System.out.println(voiture.getEstDemarree());
-
-        voiture.accelerer();
-        System.out.println(voiture.getVitesseActuelle());
-        voiture.accelerer();
-        System.out.println(voiture.getVitesseActuelle());
-
-        voiture.accelerer();
-        System.out.println(voiture.getVitesseActuelle());
- 
-        voiture.accelerer();
+        Cercle cercle = new Cercle(3.0);
+        cercle.dessiner();
+        
+        Triangle triangle = new Triangle(5, 2);
+        triangle.dessiner();
     }
+
+
 }
