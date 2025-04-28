@@ -1,27 +1,36 @@
-
-import com.humanbooster.exemple.Cercle;
-import com.humanbooster.exemple.Rectangle;
-import com.humanbooster.exemple.Triangle;
-
+import com.humanbooster.exemple.bibliotheque.Bibliotheque;
+import com.humanbooster.exemple.bibliotheque.Livre;
 
 public class App {
 
     
-    // <ACESSIBILITE> <TYPE RETOUR> <NOM>(<PARAMETRES>) throws <ERRORTYPE> 
-    public static void direBonjour() {
-        System.out.println("bonjour");
-    } 
     
     public static void main(String[] args) {
-        Rectangle rectangle = new Rectangle(3.0, 8.0);
-        rectangle.dessiner();
-        System.out.println(rectangle.obtenirDescription());
+        Bibliotheque bibliotheque = new Bibliotheque();
 
-        Cercle cercle = new Cercle(3.0);
-        cercle.dessiner();
+        Livre livre1 = new Livre("978-2-07-036822-8", "Le Petit Prince", "Antoine de Saint-Exupéry", 1943, true);
+        Livre livre2 = new Livre("978-2-07-036823-5", "1984", "George Orwell", 1949, true);
+        Livre livre3 = new Livre("978-2-07-036824-2", "Le Seigneur des Anneaux", "J.R.R. Tolkien", 1954, true);
+    
+        bibliotheque.ajouterLivre(livre1);
+        bibliotheque.ajouterLivre(livre2);
+        bibliotheque.ajouterLivre(livre3);
+
+        bibliotheque.emprunterLivre(livre1.getIsbn());
+
+        bibliotheque.getLivresDisponibles().forEach(System.out::println);
+    
+
+        System.out.println("------------EMPRUNTS------------");
+        bibliotheque.getLivresEmpruntes().forEach(System.out::println);
         
-        Triangle triangle = new Triangle(5, 2);
-        triangle.dessiner();
+        System.out.println("");
+        System.out.println("");
+        System.out.println("------------LIVRES APRES RENDU------------");
+
+        bibliotheque.rendreLivre(livre1.getIsbn());
+        bibliotheque.getLivresDisponibles().forEach(System.out::println);
+
     }
 
 
